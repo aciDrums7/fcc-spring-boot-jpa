@@ -14,6 +14,11 @@ public class SpringBootJpaApplication {
 		// MyFirstClass.class);
 		MyFirstService myFirstService = sprintBootContext.getBean(MyFirstService.class);
 		System.out.println(myFirstService.tellAStory());
+		System.out.println(myFirstService.getJavaVersion());
+		System.out.println(myFirstService.getOsName());
+		// System.out.println(myFirstService.readProperty());
+		System.out.println(myFirstService.getMyCustomPropertyFromYaml());
+		System.out.println(myFirstService.getMyCustomPropertyFromYaml2());
 	}
 
 }
