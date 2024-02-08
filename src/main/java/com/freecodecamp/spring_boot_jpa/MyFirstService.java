@@ -2,6 +2,7 @@ package com.freecodecamp.spring_boot_jpa;
 
 import static java.lang.StringTemplate.STR;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
@@ -29,7 +30,7 @@ public class MyFirstService {
     // ? 1 - Constructor Injection
     // ! RECOMMENDED WAY
     // ^ @Autowired is optional if only one constructor
-    public MyFirstService(/* @Qualifier("bean2") */ MyFirstClass myFirstClass, Environment environment) {
+    public MyFirstService(@Qualifier("myFirstBean") MyFirstClass myFirstClass, Environment environment) {
         this.myFirstClass = myFirstClass;
         this.environment = environment;
     }
