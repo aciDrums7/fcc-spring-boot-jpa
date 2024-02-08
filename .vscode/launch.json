@@ -8,7 +8,8 @@
             "mainClass": "com.freecodecamp.spring_boot_jpa.SpringBootJpaApplication",
             "projectName": "spring_boot_jpa",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": "--enable-preview"
         }
     ]
 }
