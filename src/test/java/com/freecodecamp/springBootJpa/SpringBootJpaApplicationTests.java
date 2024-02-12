@@ -1,4 +1,4 @@
-package com.freecodecamp.spring_boot_jpa;
+package com.freecodecamp.springBootJpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.freecodecamp.spring_boot_jpa;
+package com.freecodecamp.springBootJpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

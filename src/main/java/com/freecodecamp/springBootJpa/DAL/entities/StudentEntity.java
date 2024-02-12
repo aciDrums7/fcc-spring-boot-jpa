@@ -1,4 +1,6 @@
-package com.freecodecamp.spring_boot_jpa.DAL.entities;
+package com.freecodecamp.springBootJpa.DAL.entities;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -36,5 +38,6 @@ public class StudentEntity {
 
     @ManyToOne
     @JoinColumn(name = "school_id")
+    @JsonBackReference // ^ needed to avoid recursive loop reference when serializing to JSON
     private SchoolEntity school;
 }

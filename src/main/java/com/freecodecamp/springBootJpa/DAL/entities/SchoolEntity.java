@@ -1,8 +1,12 @@
-package com.freecodecamp.spring_boot_jpa.DAL.entities;
+package com.freecodecamp.springBootJpa.DAL.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -21,6 +25,7 @@ public class SchoolEntity {
     // @Column
     private String name;
 
-    @OneToMany(mappedBy = "school")
+    @OneToMany(mappedBy = "school" /* , fetch = FetchType.EAGER */)
+    @JsonManagedReference // ^ needed to avoid recursive loop reference when serializing to JSON
     private List<StudentEntity> students;
 }

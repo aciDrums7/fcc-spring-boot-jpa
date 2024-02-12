@@ -1,4 +1,4 @@
-package com.freecodecamp.spring_boot_jpa.DAL.entities;
+package com.freecodecamp.springBootJpa.DAL.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

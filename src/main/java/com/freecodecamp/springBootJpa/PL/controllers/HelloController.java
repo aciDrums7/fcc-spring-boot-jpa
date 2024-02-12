@@ -1,4 +1,4 @@
-package com.freecodecamp.spring_boot_jpa.PL.controllers;
+package com.freecodecamp.springBootJpa.PL.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class FirstController {
+public class HelloController {
 
     // ^ RequestMappingHandlerMapping is the class that maps these URI to the
     // ^ corrispondent handler method at the boostrapping of Spring App
