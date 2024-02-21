@@ -1,7 +1,8 @@
-package com.freecodecamp.springBootJpa.DAL.entities;
+package com.freecodecamp.springBootJpa.students;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import com.freecodecamp.springBootJpa.schools.SchoolEntity;
+import com.freecodecamp.springBootJpa.studentsprofiles.StudentProfileEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,6 +18,7 @@ import lombok.Data;
 @Table(name = "students")
 @Data
 public class StudentEntity {
+
     @Id
     @GeneratedValue
     private Long id;

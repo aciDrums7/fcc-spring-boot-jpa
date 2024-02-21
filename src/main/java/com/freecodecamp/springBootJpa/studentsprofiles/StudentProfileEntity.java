@@ -1,5 +1,6 @@
-package com.freecodecamp.springBootJpa.DAL.entities;
+package com.freecodecamp.springBootJpa.studentsprofiles;
 
+import com.freecodecamp.springBootJpa.students.StudentEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

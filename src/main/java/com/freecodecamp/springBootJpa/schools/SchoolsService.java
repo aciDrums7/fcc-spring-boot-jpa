@@ -1,19 +1,11 @@
-package com.freecodecamp.springBootJpa.BLL.services;
+package com.freecodecamp.springBootJpa.schools;
 
+import static com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
+
+import com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException;
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
-import com.freecodecamp.springBootJpa.BLL.dtos.schools.SchoolRequestDto;
-import com.freecodecamp.springBootJpa.BLL.dtos.schools.SchoolResponseDto;
-import com.freecodecamp.springBootJpa.BLL.exceptions.NoSuchElementFoundException;
-import com.freecodecamp.springBootJpa.BLL.mappers.SchoolsMapper;
-import com.freecodecamp.springBootJpa.DAL.entities.SchoolEntity;
-import com.freecodecamp.springBootJpa.DAL.repositories.SchoolsRepository;
-
 import lombok.AllArgsConstructor;
-
-import static com.freecodecamp.springBootJpa.BLL.exceptions.NoSuchElementFoundException.elementNotFoundById;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
@@ -29,10 +21,9 @@ public class SchoolsService {
     }
 
     public SchoolResponseDto findById(Long id) {
-        return schoolsMapper
-                .toResponseDto(
-                        schoolRepository.findById(id).orElseThrow(
-                                () -> new NoSuchElementFoundException(elementNotFoundById(id))));
+        return schoolsMapper.toResponseDto(
+            schoolRepository.findById(id).orElseThrow(() -> new NoSuchElementFoundException(elementNotFoundById(id)))
+        );
     }
 
     public SchoolResponseDto create(SchoolRequestDto requestDto) {
@@ -56,5 +47,4 @@ public class SchoolsService {
             throw new NoSuchElementFoundException(elementNotFoundById(id));
         }
     }
-
 }

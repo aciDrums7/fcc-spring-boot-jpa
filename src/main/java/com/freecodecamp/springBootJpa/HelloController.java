@@ -1,4 +1,4 @@
-package com.freecodecamp.springBootJpa.PL.controllers;
+package com.freecodecamp.springBootJpa;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,5 +15,4 @@ public class HelloController {
     public String sayHello() {
         return "Hello from my first controller";
     }
-
 }

@@ -1,15 +1,15 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Spring Boot & Spring Data JPA",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.freecodecamp.springBootJpa.SpringBootJpaApplication",
-            "projectName": "spring_boot_jpa",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env",
-            "vmArgs": ""
-        }
-    ]
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot & Spring Data JPA",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.freecodecamp.springBootJpa.SpringBootJpaApplication",
+      "projectName": "spring_boot_jpa",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": ""
+    }
+  ]
 }
