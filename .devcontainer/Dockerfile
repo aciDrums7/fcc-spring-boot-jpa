@@ -6,8 +6,18 @@ ARG MAVEN_VERSION=""
 ARG INSTALL_GRADLE="false"
 ARG GRADLE_VERSION=""
 
+# Install Node.js and npm
+ARG INSTALL_NODE="true"
+ARG NODE_VERSION="20.11.1"
+
 RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install maven \"${MAVEN_VERSION}\""; fi \
     && if [ "${INSTALL_GRADLE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install gradle \"${GRADLE_VERSION}\""; fi
+
+RUN if [ "${INSTALL_NODE}" = "true" ]; then \
+    su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION}" && \
+    su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm use ${NODE_VERSION}" && \
+    su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g npm"; \
+fi
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
