@@ -12,6 +12,8 @@
     "oderwat.indent-rainbow",
     "yzhang.markdown-all-in-one",
     "sonarsource.sonarlint-vscode",
-    "tabnine.tabnine-vscode"
+    "tabnine.tabnine-vscode",
+    "esbenp.prettier-vscode",
+    "inferrinizzard.prettier-sql-vscode"
   ]
 }
