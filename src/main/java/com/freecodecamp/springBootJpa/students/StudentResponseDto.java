@@ -1,3 +1,11 @@
 package com.freecodecamp.springBootJpa.students;
 
-public record StudentResponseDto(String firstname, String lastname, String email) {}
+import lombok.Builder;
+
+@Builder
+public record StudentResponseDto(
+    String firstname,
+    String lastname,
+    String email,
+    Integer age
+) {}

@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 // @Repository
 public interface StudentsRepository extends JpaRepository<StudentEntity, Long> {
-    List<StudentEntity> findAllByFirstnameLike(/* @Param(value = "firstname") */String firstname);
+    List<StudentEntity> findAllByFirstnameLike(
+        /* @Param(value = "firstname") */String firstname
+    );
 }

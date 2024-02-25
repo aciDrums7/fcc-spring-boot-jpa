@@ -1,7 +1,13 @@
 package com.freecodecamp.springBootJpa.schools;
 
-import com.freecodecamp.springBootJpa.misc.mappers.GenericMapper;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface SchoolsMapper extends GenericMapper<SchoolEntity, SchoolRequestDto, SchoolResponseDto> {}
+public interface SchoolsMapper {
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "students", ignore = true)
+    SchoolEntity toEntity(SchoolRequestDto dto);
+
+    SchoolResponseDto toDto(SchoolEntity entity);
+}

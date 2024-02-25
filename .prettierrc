@@ -5,13 +5,13 @@ overrides:
   - files:
       - "*.java"
     options:
-      printWidth: 140
+      printWidth: 80
       tabWidth: 4
       useTabs: false
       trailingComma: none
 
   - files:
-      - "**/*.json"
+      - "** /*.json"
     options:
       tabWidth: 2
       semi: false
@@ -23,7 +23,7 @@ overrides:
       singleQuote: false
 
   - files:
-      - "**/*.yaml"
+      - "** /*.yaml"
       - "**/*.yml"
     options:
       singleQuote: true

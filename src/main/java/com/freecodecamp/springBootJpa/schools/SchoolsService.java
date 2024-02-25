@@ -14,27 +14,37 @@ public class SchoolsService {
 
     private final SchoolsRepository schoolRepository;
 
-    private final SchoolsMapper schoolsMapper;
+    private final SchoolsMapper schoolMapper;
 
     public List<SchoolResponseDto> findAll() {
-        return schoolsMapper.toResponseDtoList(schoolRepository.findAll());
+        return schoolRepository
+            .findAll()
+            .stream()
+            .map(schoolMapper::toDto)
+            .toList();
     }
 
     public SchoolResponseDto findById(Long id) {
-        return schoolsMapper.toResponseDto(
-            schoolRepository.findById(id).orElseThrow(() -> new NoSuchElementFoundException(elementNotFoundById(id)))
-        );
+        return schoolRepository
+            .findById(id)
+            .map(schoolMapper::toDto)
+            .orElseThrow(() ->
+                new NoSuchElementFoundException(elementNotFoundById(id))
+            );
     }
 
     public SchoolResponseDto create(SchoolRequestDto requestDto) {
-        return schoolsMapper.toResponseDto(schoolRepository.save(schoolsMapper.toEntity(requestDto)));
+        return schoolMapper.toDto(
+            schoolRepository.save(schoolMapper.toEntity(requestDto))
+        );
     }
 
-    public SchoolResponseDto update(Long id, SchoolRequestDto requestDto) throws NoSuchElementFoundException {
+    public SchoolResponseDto update(Long id, SchoolRequestDto requestDto)
+        throws NoSuchElementFoundException {
         if (schoolRepository.existsById(id)) {
-            var schoolEntity = schoolsMapper.toEntity(requestDto);
+            var schoolEntity = schoolMapper.toEntity(requestDto);
             schoolEntity.setId(id);
-            return schoolsMapper.toResponseDto(schoolRepository.save(schoolEntity));
+            return schoolMapper.toDto(schoolRepository.save(schoolEntity));
         } else {
             throw new NoSuchElementFoundException(elementNotFoundById(id));
         }

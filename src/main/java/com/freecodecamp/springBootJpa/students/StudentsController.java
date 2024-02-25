@@ -32,19 +32,27 @@ public class StudentsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StudentResponseDto> findById(@NonNull @PathVariable Long id) {
+    public ResponseEntity<StudentResponseDto> findById(
+        @NonNull @PathVariable Long id
+    ) {
         return ResponseEntity.ok(studentsService.findById(id));
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<StudentResponseDto>> findAllByFirstname(@NonNull @RequestParam String firstname) {
+    public ResponseEntity<List<StudentResponseDto>> findAllByFirstname(
+        @NonNull @RequestParam String firstname
+    ) {
         return ResponseEntity.ok(studentsService.findAllByFirstname(firstname));
     }
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<StudentResponseDto> create(@NonNull @Valid @RequestBody StudentRequestDto requestDto) throws URISyntaxException {
-        return ResponseEntity.created(new URI("")).body(studentsService.create(requestDto));
+    public ResponseEntity<StudentResponseDto> create(
+        @NonNull @Valid @RequestBody StudentRequestDto requestDto
+    ) throws URISyntaxException {
+        return ResponseEntity
+            .created(new URI(""))
+            .body(studentsService.create(requestDto));
     }
 
     @PutMapping("/{id}")
@@ -56,7 +64,9 @@ public class StudentsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<StudentResponseDto> delete(@NonNull @PathVariable Long id) {
+    public ResponseEntity<StudentResponseDto> delete(
+        @NonNull @PathVariable Long id
+    ) {
         studentsService.delete(id);
         return ResponseEntity.noContent().build();
     }

@@ -3,7 +3,10 @@ package com.freecodecamp.springBootJpa.students;
 import static com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
 
 import com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException;
+import com.freecodecamp.springBootJpa.schools.SchoolEntity;
+import com.freecodecamp.springBootJpa.schools.SchoolsRepository;
 import java.util.List;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,31 +17,50 @@ public class StudentsService {
 
     private final StudentsRepository studentsRepository;
 
+    private final SchoolsRepository schoolsRepository;
+
     private final StudentsMapper studentsMapper;
 
     public List<StudentResponseDto> findAll() {
-        return studentsMapper.toResponseDtoList(studentsRepository.findAll());
+        return studentsRepository
+            .findAll()
+            .stream()
+            .map(studentsMapper::toDto)
+            .toList();
     }
 
     public List<StudentResponseDto> findAllByFirstname(String firstname) {
-        return studentsMapper.toResponseDtoList(studentsRepository.findAllByFirstnameLike(firstname));
+        return studentsRepository
+            .findAllByFirstnameLike(firstname)
+            .stream()
+            .map(studentsMapper::toDto)
+            .toList();
     }
 
     public StudentResponseDto findById(Long id) {
-        return studentsMapper.toResponseDto(
-            studentsRepository.findById(id).orElseThrow(() -> new NoSuchElementFoundException(elementNotFoundById(id)))
-        );
+        return studentsRepository
+            .findById(id)
+            .map(studentsMapper::toDto)
+            .orElseThrow(() ->
+                new NoSuchElementFoundException(elementNotFoundById(id))
+            );
     }
 
     public StudentResponseDto create(StudentRequestDto requestDto) {
-        return studentsMapper.toResponseDto(studentsRepository.save(studentsMapper.toEntity(requestDto)));
+        Optional<SchoolEntity> schoolEntity = Optional.empty();
+        if (requestDto.schoolId() != null) {
+            schoolEntity = schoolsRepository.findById(requestDto.schoolId());
+        }
+        var studentEntity = studentsMapper.toEntity(requestDto);
+        studentEntity.setSchool(schoolEntity.orElse(null));
+        return studentsMapper.toDto(studentsRepository.save(studentEntity));
     }
 
     public StudentResponseDto update(Long id, StudentRequestDto requestDto) {
         if (studentsRepository.existsById(id)) {
             var studentEntity = studentsMapper.toEntity(requestDto);
             studentEntity.setId(id);
-            return studentsMapper.toResponseDto(studentsRepository.save(studentEntity));
+            return studentsMapper.toDto(studentsRepository.save(studentEntity));
         } else {
             throw new NoSuchElementFoundException(elementNotFoundById(id));
         }

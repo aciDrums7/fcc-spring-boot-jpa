@@ -28,17 +28,26 @@ public class SchoolsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SchoolResponseDto> findById(@NonNull @PathVariable Long id) {
+    public ResponseEntity<SchoolResponseDto> findById(
+        @NonNull @PathVariable Long id
+    ) {
         return ResponseEntity.ok(schoolsService.findById(id));
     }
 
     @PostMapping("/")
-    public ResponseEntity<SchoolResponseDto> create(@NonNull @RequestBody SchoolRequestDto requestDto) throws URISyntaxException {
-        return ResponseEntity.created(new URI("")).body(schoolsService.create(requestDto));
+    public ResponseEntity<SchoolResponseDto> create(
+        @NonNull @RequestBody SchoolRequestDto requestDto
+    ) throws URISyntaxException {
+        return ResponseEntity
+            .created(new URI(""))
+            .body(schoolsService.create(requestDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SchoolResponseDto> update(@NonNull @PathVariable Long id, @NonNull @RequestBody SchoolRequestDto requestDto) {
+    public ResponseEntity<SchoolResponseDto> update(
+        @NonNull @PathVariable Long id,
+        @NonNull @RequestBody SchoolRequestDto requestDto
+    ) {
         return ResponseEntity.ok(schoolsService.update(id, requestDto));
     }
 
