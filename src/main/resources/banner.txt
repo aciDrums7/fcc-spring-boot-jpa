@@ -10,4 +10,4 @@ $$  __$$ |$$ |      $$ |$$ |  $$ |$$ |      $$ |  $$ |$$ | $$ | $$ | \____$$\  $
                                                                                         
                                                                                         
                                                                                         
-Spring Boot & Spring Data JPA – Complete Course                  Spring Boot 3.2.2
+Spring Boot and Spring Data JPA – Complete Course                  Spring Boot 3.2.3

@@ -1,8 +1,8 @@
-package com.freecodecamp.springBootJpa.schools;
+package com.freecodecamp.spring_boot_jpa.schools;
 
-import static com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
+import static com.freecodecamp.spring_boot_jpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
 
-import com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException;
+import com.freecodecamp.spring_boot_jpa.misc.exceptions.NoSuchElementFoundException;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

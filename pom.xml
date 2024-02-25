@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.freecodecamp</groupId>
-	<artifactId>springBootJpa</artifactId>
+	<artifactId>spring_boot_jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springBootJpa</name>
+	<name>spring_boot_jpa</name>
 	<description>Spring Boot and Spring Data JPA, Complete Course</description>
 	<properties>
 		<java.version>21</java.version>

@@ -1,4 +1,4 @@
-package com.freecodecamp.springBootJpa.misc.exceptions;
+package com.freecodecamp.spring_boot_jpa.misc.exceptions;
 
 import java.util.NoSuchElementException;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.freecodecamp.springBootJpa;
+package com.freecodecamp.spring_boot_jpa;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

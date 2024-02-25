@@ -1,3 +1,3 @@
-# fcc-spring-boot-jpa
+# Spring Boot and Spring Data JPA – Complete Course
 
-Spring Boot &amp; Spring Data JPA – Complete Course
+https://youtu.be/5rNk7m_zlAg

@@ -1,8 +1,8 @@
-package com.freecodecamp.springBootJpa.students;
+package com.freecodecamp.spring_boot_jpa.students;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.freecodecamp.springBootJpa.schools.SchoolEntity;
-import com.freecodecamp.springBootJpa.studentsprofiles.StudentProfileEntity;
+import com.freecodecamp.spring_boot_jpa.schools.SchoolEntity;
+import com.freecodecamp.spring_boot_jpa.studentsprofiles.StudentProfileEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

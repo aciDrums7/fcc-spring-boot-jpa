@@ -1,10 +1,10 @@
-package com.freecodecamp.springBootJpa.students;
+package com.freecodecamp.spring_boot_jpa.students;
 
-import static com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
+import static com.freecodecamp.spring_boot_jpa.misc.exceptions.NoSuchElementFoundException.elementNotFoundById;
 
-import com.freecodecamp.springBootJpa.misc.exceptions.NoSuchElementFoundException;
-import com.freecodecamp.springBootJpa.schools.SchoolEntity;
-import com.freecodecamp.springBootJpa.schools.SchoolsRepository;
+import com.freecodecamp.spring_boot_jpa.misc.exceptions.NoSuchElementFoundException;
+import com.freecodecamp.spring_boot_jpa.schools.SchoolEntity;
+import com.freecodecamp.spring_boot_jpa.schools.SchoolsRepository;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;

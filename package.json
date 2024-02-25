@@ -1,4 +1,9 @@
 {
+  "name": "fcc-spring-boot-jpa",
+  "description": "Spring Boot and Spring Data JPA – Complete Course",
+  "version": "1.0.0",
+  "author": "aciDrums7",
+  "license": "MIT",
   "devDependencies": {
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",

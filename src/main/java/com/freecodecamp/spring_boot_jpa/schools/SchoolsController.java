@@ -1,4 +1,4 @@
-package com.freecodecamp.springBootJpa.schools;
+package com.freecodecamp.spring_boot_jpa.schools;
 
 import java.net.URI;
 import java.net.URISyntaxException;

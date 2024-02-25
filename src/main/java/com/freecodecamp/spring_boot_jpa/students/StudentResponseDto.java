@@ -1,4 +1,4 @@
-package com.freecodecamp.springBootJpa.students;
+package com.freecodecamp.spring_boot_jpa.students;
 
 import lombok.Builder;
 
